@@ -1,0 +1,9 @@
+= simple_form_for(@conference) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :pin
+
+  .form-actions
+    = f.button :submit

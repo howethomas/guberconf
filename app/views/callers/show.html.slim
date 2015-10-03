@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Number:
+  = @caller.number
+p
+  strong Name:
+  = @caller.name
+p
+  strong Email:
+  = @caller.email
+p
+  strong Wants transcript:
+  = @caller.wants_transcript
+
+= link_to 'Edit', edit_caller_path(@caller)
+'|
+= link_to 'Back', callers_path

@@ -1,0 +1,11 @@
+= simple_form_for(@caller) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :number
+    = f.input :name
+    = f.input :email
+    = f.input :wants_transcript
+
+  .form-actions
+    = f.button :submit

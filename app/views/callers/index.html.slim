@@ -1,0 +1,27 @@
+h1 Listing callers
+
+table
+  thead
+    tr
+      th Number
+      th Name
+      th Email
+      th Wants transcript
+      th
+      th
+      th
+
+  tbody
+    - @callers.each do |caller|
+      tr
+        td = caller.number
+        td = caller.name
+        td = caller.email
+        td = caller.wants_transcript
+        td = link_to 'Show', caller
+        td = link_to 'Edit', edit_caller_path(caller)
+        td = link_to 'Destroy', caller, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Caller', new_caller_path
