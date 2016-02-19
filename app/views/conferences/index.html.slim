@@ -1,23 +1,23 @@
 h1 Listing conferences
 
-table
-  thead
-    tr
-      th Name
-      th Pin
-      th
-      th
-      th
-
-  tbody
-    - @conferences.each do |conference|
+.col-sm-10.col-sm-offset2
+  table.table
+    thead
       tr
-        td = conference.name
-        td = conference.pin
-        td = link_to 'Show', conference
-        td = link_to 'Edit', edit_conference_path(conference)
-        td = link_to 'Destroy', conference, data: {:confirm => 'Are you sure?'}, :method => :delete
+        th Name
+        th Pin
+        th
+        th
+        th
 
-br
+    tbody
+      - @conferences.each do |conference|
+        tr
+          td = conference.name
+          td = conference.pin
+          td = link_to 'Show', conference
+          td = link_to 'Edit', edit_conference_path(conference)
+          td = link_to 'Destroy', conference, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-= link_to 'New Conference', new_conference_path
+  br
+  = link_to 'New Conference', new_conference_path

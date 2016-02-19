@@ -1,17 +1,20 @@
+
+h1 Caller Information
 p#notice = notice
 
-p
-  strong Number:
-  = @caller.number
-p
-  strong Name:
-  = @caller.name
-p
-  strong Email:
-  = @caller.email
-p
-  strong Wants transcript:
-  = @caller.wants_transcript
+table.table.table-striped
+  tr
+    td Number
+    td = @caller.number
+  tr
+    td Name
+    td= @caller.name
+  tr
+    td Email
+    td= @caller.email
+  tr
+    td Wants transcript:
+    td= @caller.wants_transcript
 
 = link_to 'Edit', edit_caller_path(@caller)
 '|

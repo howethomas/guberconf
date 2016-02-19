@@ -10,6 +10,15 @@ class ConferencesController < ApplicationController
   # GET /conferences/1
   # GET /conferences/1.json
   def show
+    @conference = Conference.find(params[:id])
+    clarify = Clarify::Client.new(api_key: ENV['CLARIFY_KEY'])
+    bundle = clarify.get("/v1/bundles/#{@conference.clarify_id}")
+    bundle_insights_url = bundle.relation('clarify:insights')
+    @insights = clarify.get(bundle_insights_url)
+    @spoken_words_url = @insights.body['_links']['insight:spoken_keywords']['href']
+    @spoken_words_analysis = clarify.get(@spoken_words_url)
+    @track_data = @spoken_words_analysis.body['track_data']
+    @listeners = Caller.all
   end
 
   # GET /conferences/new

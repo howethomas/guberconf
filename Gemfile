@@ -9,7 +9,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'tropo-webapi-ruby'
 gem 'paperclip'
 gem 'clarify'
-
+gem 'awesome_print'
+gem 'aws-sdk'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

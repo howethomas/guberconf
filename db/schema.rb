@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151003224840) do
+ActiveRecord::Schema.define(version: 20151004024715) do
 
   create_table "callers", force: :cascade do |t|
     t.string   "number"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20151003224840) do
     t.string   "recording_content_type"
     t.integer  "recording_file_size"
     t.datetime "recording_updated_at"
+    t.string   "clarify_id"
+    t.string   "recording_url"
   end
 
   create_table "keywords", force: :cascade do |t|

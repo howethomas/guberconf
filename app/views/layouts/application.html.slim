@@ -13,7 +13,9 @@ html
       == render 'layouts/navigation'
     main[role="main"]
       == render 'layouts/messages'
-      == yield
+      .col-xs-12 style='height:50px;'
+      .col-xs-10.col-offset2
+        == yield
   div id="footer"
     script src="/assets/ripples.min.js"
     script src="/assets/material.min.js"
